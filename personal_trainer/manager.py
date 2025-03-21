@@ -7,9 +7,6 @@ import openai
 import logging
 import streamlit as st
 from dotenv import load_dotenv
-from openai.types.beta import Assistant
-
-from assitant import wait_for_run_completion
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
@@ -57,8 +54,8 @@ def get_news(topic):
 
 class AssistantManager:
     # Static fields for stateful assistants
-    thread_id = "thread_zfD8RYk0m5SOwTapYEdABABU"
-    assistant_id = "asst_uc47iWEjt4OvMPCsPHQKKr9F"
+    thread_id = "thread_zfD8RYk0m5SOwTapYEdABABU"   # Your thread id
+    assistant_id = "asst_uc47iWEjt4OvMPCsPHQKKr9F"  # Your assistant's id
 
     def __init__(self, model: str = model):
         self.client = openai.OpenAI(api_key=openai_api_key)
